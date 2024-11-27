@@ -126,7 +126,7 @@ class AppBackupDetailActivity : BaseActivity() {
             showSnack(getString(R.string.not_installed_and_backup_apk_notice))
             return
         }
-        AppRecoverActivity.start(this, backupAppItemInfo)
+        AppRecoverActivity.start(this, appName, backupAppItemInfo)
     }
 
     private fun deleteBackup(backupAppItemInfo: BackupAppItemInfo?) {

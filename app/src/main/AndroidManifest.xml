@@ -75,7 +75,6 @@
         <activity
             android:name=".ui.activity.appbackup.AppBackupDetailActivity"
             android:exported="false" />
-
         <activity
             android:name=".ui.activity.appbackup.AppRecoverActivity"
             android:exported="false" />

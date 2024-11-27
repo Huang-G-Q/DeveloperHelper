@@ -21,6 +21,15 @@ inline fun <reified T : Serializable> Bundle.getSerializableCompat(key: String):
     }
 }
 
+
+inline fun <reified T : Serializable> Intent.getSerializableCompat(key: String): T? {
+    return if (Build.VERSION.SDK_INT >= 33) {
+        getSerializableExtra(key, T::class.java)
+    } else {
+        getSerializableExtra(key) as T?
+    }
+}
+
 inline fun <reified T : Parcelable> Intent.getParcelableCompat(key: String): T? {
     return IntentCompat.getParcelableExtra(this, key, T::class.java)
 }

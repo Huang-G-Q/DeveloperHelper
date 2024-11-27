@@ -71,6 +71,14 @@
             app:layout_constraintTop_toTopOf="@id/cb_apk"
             tools:checked="false" />
 
+        <View
+            android:id="@+id/view_cb_mask"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/cb_apk"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_time_line"
             android:layout_width="match_parent"

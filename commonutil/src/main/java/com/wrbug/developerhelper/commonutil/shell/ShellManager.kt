@@ -147,6 +147,15 @@ object ShellManager {
         return result.getStdout()
     }
 
+    fun rmFile(file: File): Boolean {
+        return rmFile(file.absolutePath)
+    }
+
+    fun mkDir(file: String): Boolean {
+        val result = ShellUtils.runWithSu("mkdir $file")
+        return result.isSuccessful
+    }
+
     fun rmFile(file: String): Boolean {
         val result = ShellUtils.runWithSu("rm -rf $file")
         return result.isSuccessful
@@ -179,6 +188,11 @@ object ShellManager {
             .contains("Operation not permitted")
     }
 
+    fun tarXF(tarPath: String, dst: String): Boolean {
+        val result = ShellUtils.runWithSu("tar -xf $tarPath -C $dst")
+        return result.isSuccessful
+    }
+
 
     fun catFile(source: String, dst: String, mod: String? = null): Boolean {
         val cmds = arrayListOf<String>()
@@ -209,6 +223,16 @@ object ShellManager {
             String.format(SHELL_FORCE_STOP_APP, packageName),
             useBusyBox = false
         )
+        return result.isSuccessful
+    }
+
+    fun uninstallApk(packageName: String): Boolean {
+        val result = ShellUtils.runWithSu("pm uninstall $packageName", useBusyBox = false)
+        return result.isSuccessful
+    }
+
+    fun installApk(apkDir: String): Boolean {
+        val result = ShellUtils.runWithSu("pm install -r $apkDir", useBusyBox = false)
         return result.isSuccessful
     }
 

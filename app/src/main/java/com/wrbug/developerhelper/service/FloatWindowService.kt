@@ -37,7 +37,7 @@ class FloatWindowService : Service() {
     companion object {
 
         const val FLOAT_BUTTON = "floatButton"
-        private const val CHANNEL_ID = "DEMON"
+        private const val CHANNEL_ID = "FLOAT_WINDOW_DEMON"
         fun start(context: Context) {
             context.startService(Intent(context, FloatWindowService::class.java))
         }
