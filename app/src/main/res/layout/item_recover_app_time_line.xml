@@ -11,10 +11,8 @@
         android:id="@+id/time_marker"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        app:linePadding="5dp"
         app:markerInCenter="true"
-        app:startLineColor="@color/colorPrimary"
-        app:endLineColor="@color/colorPrimary"
+        app:lineWidth="1dp"
         app:markerSize="20dp" />
 
     <androidx.cardview.widget.CardView

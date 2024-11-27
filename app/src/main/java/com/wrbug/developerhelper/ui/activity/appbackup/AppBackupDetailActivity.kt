@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.wrbug.developerhelper.R
 import com.wrbug.developerhelper.base.BaseActivity
 import com.wrbug.developerhelper.base.ExtraKey
+import com.wrbug.developerhelper.commonutil.AppInfoManager
 import com.wrbug.developerhelper.commonutil.addTo
 import com.wrbug.developerhelper.commonutil.dpInt
 import com.wrbug.developerhelper.databinding.ActivityAppBackupDetailBinding
@@ -121,7 +122,11 @@ class AppBackupDetailActivity : BaseActivity() {
 
     private fun recover(backupAppItemInfo: BackupAppItemInfo?) {
         backupAppItemInfo ?: return
-
+        if (!AppInfoManager.isInstalled(backupAppItemInfo.packageName) && !backupAppItemInfo.backupApk) {
+            showSnack(getString(R.string.not_installed_and_backup_apk_notice))
+            return
+        }
+        AppRecoverActivity.start(this, backupAppItemInfo)
     }
 
     private fun deleteBackup(backupAppItemInfo: BackupAppItemInfo?) {

@@ -20,6 +20,10 @@ object AppInfoManager {
         return apkMap
     }
 
+    fun isInstalled(packageName: String): Boolean {
+        return getAppByPackageName(packageName) != null
+    }
+
     fun getAppByPackageName(packageName: String): ApkInfo? {
         return getAllApps()[packageName]
     }

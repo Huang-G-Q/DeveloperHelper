@@ -95,7 +95,7 @@
     <string name="backuping_notice">备份正在进行中，请勿关闭该窗口</string>
     <string name="item_backup_apk">应用安装包</string>
     <string name="item_backup_data">Data目录</string>
-    <string name="item_backup_android_data">Sdcard/Data目录</string>
+    <string name="item_backup_android_data">sdcard/Data目录</string>
     <string name="backup_success_notice">备份已完成，您可以前往 <i>%1$s</i> 目录查看备份文件</string>
     <string name="backup_waiting">等待中</string>
     <string name="item_zip_backup_file">打包备份文件</string>
@@ -116,4 +116,7 @@
     <string name="delete_backup_notice">是否删除该备份？</string>
     <string name="delete_backup_failed_retry">删除备份失败，请重试</string>
     <string name="recover_data_title">选择需要恢复的数据</string>
+    <string name="time_line_recover_title">恢复%1$s</string>
+    <string name="not_installed_and_backup_apk_notice">未安装该应用，且apk未备份，无法恢复</string>
+    <string name="apk_version_backup_version_not_same_notice">当前应用版本与备份版本不一致，备份数据可能不兼容，建议勾选恢复安装包，是否继续</string>
 </resources>

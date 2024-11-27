@@ -30,7 +30,7 @@
             android:layout_marginHorizontal="24dp"
             android:layout_marginTop="16dp"
             android:text="@string/recover_data_title"
-            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+            android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -39,6 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:buttonTint="@color/colorAccent"
             android:text="@string/item_backup_apk"
             android:textAppearance="@style/TextAppearance.Material3.BodySmall"
             app:layout_constraintStart_toStartOf="@+id/tv_recover_title"
@@ -50,6 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            android:buttonTint="@color/colorAccent"
             android:text="@string/item_backup_data"
             android:textAppearance="@style/TextAppearance.Material3.BodySmall"
             app:layout_constraintStart_toEndOf="@id/cb_apk"
@@ -62,27 +64,35 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            android:buttonTint="@color/colorAccent"
             android:text="@string/item_backup_android_data"
             android:textAppearance="@style/TextAppearance.Material3.BodySmall"
             app:layout_constraintStart_toEndOf="@id/cb_data"
             app:layout_constraintTop_toTopOf="@id/cb_apk"
             tools:checked="false" />
 
-        <com.google.android.material.divider.MaterialDivider
-            android:id="@+id/line"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@id/cb_apk" />
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_time_line"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/line"
-            tools:itemCount="5"
+            android:layout_marginTop="16dp"
+            android:overScrollMode="never"
+            app:layout_constraintBottom_toTopOf="@id/btn_recover"
+            app:layout_constraintTop_toBottomOf="@id/cb_apk"
+            tools:itemCount="4"
             tools:listitem="@layout/item_recover_app_time_line" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_recover"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/colorPrimary"
+            android:enabled="false"
+            android:text="执行"
+            android:textColor="@color/material_text_color_white_text"
+            app:layout_constraintBottom_toBottomOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
